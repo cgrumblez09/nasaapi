@@ -1,0 +1,43 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+#title, h1{
+  text-align: center;
+}
+#mediaInput{
+  display: flex;
+  justify-content: center;
+}
+#nasaPic{
+  display: block;
+  margin: 0 auto;
+  width: 30vh;
+  height: 30vh;
+}
+#date{
+  text-align: center;
+}
+iframe{
+  /* border: 1px solid red; */
+  display: none;
+  margin: auto;
+}
+h3{
+  /* border: 1px solid red; */
+  text-align: center;
+  /* display: block; */
+  width: 80%;
+  margin: auto
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
