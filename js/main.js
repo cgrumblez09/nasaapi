@@ -3,27 +3,29 @@ document.querySelector('button').addEventListener('click', getRandomBike)
 
 document.addEventListener('DOMContentLoaded', function todaysPic(){
 
-  const today = new Date().toJSON().slice(0, 10);;
-  console.log(today);
-  const url = `https://api.nasa.gov/planetary/apod?api_key=bxIThw5r1wEualZSVMzMlyro2B1kB0q70ltQX1Px&date=${today}`
+  const today = new Date().toLocaleDateString()
+  const alsoToday = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+  console.log(alsoToday)
+  // console.log(today);
+  const url = `https://api.nasa.gov/planetary/apod?api_key=bxIThw5r1wEualZSVMzMlyro2B1kB0q70ltQX1Px`
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-        console.log(data)
-        document.querySelector('#nasaDate').value = today
+        // console.log(today)
+        document.querySelector('#nasaDate').value = alsoToday
       if(data.media_type === 'image'){
         document.querySelector('#nasaPic').style.display = 'block'
         document.querySelector('#nasaPic').src = data.hdurl
         document.querySelector('iframe').style.display = 'none'
         document.querySelector('#title').innerText = data.title
-        document.querySelector('#date').innerText = 'Todays date:   ' + data.date
+        document.querySelector('#date').innerText = 'Todays date:   ' + today
       }
       else if(data.media_type === 'video'){
         document.querySelector('#nasaPic').style.display = 'none'
         document.querySelector('iframe').style.display = 'block'
         document.querySelector('iframe').src = data.url
         document.querySelector('#title').innerText = data.title
-        document.querySelector('#date').innerText = 'Todays date:' + data.date
+        document.querySelector('#date').innerText = 'Todays date:' + today
       }
       document.querySelector('h3').innerText = data.explanation
       
