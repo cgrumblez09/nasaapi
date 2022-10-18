@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function todaysPic(){
     .then((res) => res.json())
     .then((data) => {
         // console.log(today)
-        document.querySelector('#nasaDate').value = alsoToday
+        document.querySelector('#nasaDate').valueAsDate = new Date()
       if(data.media_type === 'image'){
         document.querySelector('#nasaPic').style.display = 'block'
         document.querySelector('#nasaPic').src = data.hdurl
