@@ -12,20 +12,24 @@ document.addEventListener('DOMContentLoaded', function todaysPic(){
     .then((res) => res.json())
     .then((data) => {
         // console.log(today)
+        const dates = document.querySelector('#date')
         document.querySelector('#nasaDate').valueAsDate = new Date()
       if(data.media_type === 'image'){
         document.querySelector('#nasaPic').style.display = 'block'
         document.querySelector('#nasaPic').src = data.hdurl
         document.querySelector('iframe').style.display = 'none'
         document.querySelector('#title').innerText = data.title
-        document.querySelector('#date').innerText = 'Todays date:   ' + today
+        dates.innerText = 'Todays date:   ' + today
+        dates.style.borderBottom = '2px solid red';
+        // dates.style.borderBottomWidth = '5px';
       }
       else if(data.media_type === 'video'){
         document.querySelector('#nasaPic').style.display = 'none'
         document.querySelector('iframe').style.display = 'block'
         document.querySelector('iframe').src = data.url
         document.querySelector('#title').innerText = data.title
-        document.querySelector('#date').innerText = 'Todays date:' + today
+        document.querySelector('#date').innerText = 'Todays date:' + today;
+        document.querySelector('#date').style.borderBottom = '2px solid red'
       }
       document.querySelector('h3').innerText = data.explanation
       

@@ -1,21 +1,54 @@
 /******************************************
 /* CSS
 /*******************************************/
-
+:root{
+  --fontColor: rgb(208, 208, 208);
+  --darkerFont: rgb(205, 6, 6);
+  --greyFont: rgb(252, 246, 69);
+  --fontStyle: 'Helvetica'
+} 
 /* Box Model Hack */
 *{
   box-sizing: border-box;
+}
+html{
+  background-image: url('../img/nebula.jpg');
+  background-repeat: none;
+  background-size: cover;
 }
 
 /******************************************
 /* LAYOUT
 /*******************************************/
 #title, h1{
+  /* border: 1px solid green; */
+  margin: 0 auto;
   text-align: center;
+  color: var(--fontColor);
+  font-family: var(--fontStyle);
+  border-bottom: 3px solid red;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  width: 60%;
+}
+#nasaImg{
+/* border: 1px solid red; */
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }
 #mediaInput{
   display: flex;
   justify-content: center;
+}
+button , input{
+  font-size: 1.5rem;
+  font-family: var(--fontStyle);
+  border-radius: 5px;
+  border-color: grey;
+  /* cursor: pointer; */
 }
 #nasaPic{
   display: block;
@@ -24,7 +57,12 @@
   height: 30vh;
 }
 #date{
+  /* border: 1px solid green; */
+  margin: 0 auto;
   text-align: center;
+  color: var(--fontColor);
+  font-family: var(--fontStyle);
+  width: 50%;
 }
 iframe{
   /* border: 1px solid red; */
@@ -36,8 +74,18 @@ h3{
   text-align: center;
   /* display: block; */
   width: 80%;
-  margin: auto
+  margin: auto;
+  color: var(--greyFont);
+  font-family: var(--fontStyle);
 }
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+button:hover{
+  background-color: blue;
+  cursor: pointer;
+}
+button:active{
+  background-color: var(--darkerFont);
+  color: var(--fontColor);
+}
